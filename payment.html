@@ -24,15 +24,9 @@
   </style>
   <script>
     function pay() {
-      $.ajax({
-        async: true,
-        type: "GET",
-        url: "https://www.bitstamp.net/api/ticker/",
-        success: function(result) {
-          data = result.last;
-          document.getElementById("pay").innerHTML = "<h3>Pay over $100 worth of bitcoin<br>1 BTC = " + data + "<br>1AYHNMMuhob5kjxrR4dg81iGz3fJibZ2R9";
-          }
-      });
+
+          document.getElementById("pay").innerHTML = "<h3>Pay over $100 USD worth of bitcoin<br><br>1AYHNMMuhob5kjxrR4dg81iGz3fJibZ2R9<br><br><a class=\"btn btn-large btn-info\"><img src=\"https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif\" width=\"100\" height=\"100\"> Awaiting Payment</a>";
+
     }
   </script>
 </head>
