@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>carding.fun</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+    .wrap {
+      text-align: center;
+      /*margin-top: 20vh;*/
+      /*width: 300px;*/
+    }
+    form {
+      /*width: 300px;*/
+      text-align: center;
+    }
+  </style>
+  <script>
+    function pay() {
+      $.ajax({
+        async: true,
+        type: "GET",
+        url: "https://www.bitstamp.net/api/ticker/",
+        success: function(result) {
+          data = result.last;
+          document.getElementById("pay").innerHTML = "<h3>Pay over $100 worth of bitcoin<br>1 BTC = " + data + "<br>1AYHNMMuhob5kjxrR4dg81iGz3fJibZ2R9";
+          }
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <img src="logo.png" alt="">
+    <h1>Top Up</h1><br>
+    <p>To activate your account, you must top up your balance with $100 or more. You will still be able to use this money to buy cards.</p><br>
+    <a class="btn btn-large btn-success" onclick="pay()">Top Up</a>
+    <br><div id="pay"></div>
+  </div>
+</body>
+</html>
